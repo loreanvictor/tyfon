@@ -5,21 +5,27 @@
 
 <br><br>
 
-TyFON serves TypeScript functions over network, in a seamless RPC style that is super easy to consume as well.
+TyFON serves simple TypeScript functions over network and makes it extremely easy to consume them. It is a CLI tool that
+generates necessary wrapper code and metadata for your functions to be served and can consume metadata served on other TyFON instances
+to generate client-side SDK with exactly the same types.
 ```bash
 npm i tyfon -g
 ```
 
+<br><br>
+
 ## Usage
 
-Suppose you have `index.ts` as follows:
+## Server-Side
+
+Suppose you have `index.ts`:
 ```ts
 export function getMsg(name: string) {
   return `Hellow ${name}!`;
 }
 ```
 
-Init tyfon and set it to serve:
+Init tyfon and serve your function:
 ```bash
 tyfon init
 tyfon serve
@@ -27,13 +33,15 @@ tyfon serve
 
 Now open `localhost:8000/msg?0=World`.
 
+<br><br>
+
 ## Client-Side
 
 ```bash
 tyfon add localhost:8000
 ```
 
-Now in your client-side code, do this:
+In your client-side code, use the function like any other package:
 
 ```ts
 import { getMsg } from '@api/backend';
