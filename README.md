@@ -26,7 +26,7 @@ tyfon init
 tyfon serve
 ```
 
-Now open `localhost:8000/getMsg/?0=World`.
+Now open `localhost:8000/getMsg/?1=World`.
 
 ## Client-Side
 
