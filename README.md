@@ -1,6 +1,5 @@
 <div align="center">
-  <img src="/tyfon.svg" width="200px"/>
-  <h1>TyFON</h1>
+  <img src="/tyfon-type.svg" width="256px"/>
   <span><b>Ty</b>ped <b>F</b>unctions <b>O</b>ver <b>N</b>etwork</span>
 </div>
 
