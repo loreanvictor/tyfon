@@ -31,7 +31,7 @@ Now open `localhost:8000/msg?0=World`.
 ## Client-Side
 
 ```bash
-tyfon add backend localhost:8000
+tyfon add localhost:8000
 ```
 
 Now in your client-side code, do this:
