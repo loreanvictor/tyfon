@@ -1,0 +1,28 @@
+{
+  "name": "tyfon",
+  "version": "0.0.1",
+  "description": "typed functions over network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loreanvictor/tyfon.git"
+  },
+  "keywords": [
+    "rpc",
+    "cloud",
+    "serverless",
+    "typescript"
+  ],
+  "author": "Eugene Ghanizadeh Khoub <ghanizadeh.eugene@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/loreanvictor/tyfon/issues"
+  },
+  "homepage": "https://github.com/loreanvictor/tyfon#readme",
+  "dependencies": {
+    "typescript": "^4.0.5"
+  }
+}
