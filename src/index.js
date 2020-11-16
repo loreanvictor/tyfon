@@ -1,4 +1,5 @@
-const exec = require('./exec');
+#!/usr/bin/env node
 
-exec('npm', 'i express');
-exec('tsc', `-d ${process.argv[2] || '.'}/index.ts --outDir dist`);
+try {
+  require('./' + process.argv[2])().then();
+} catch {}

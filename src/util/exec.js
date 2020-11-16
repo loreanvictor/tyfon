@@ -7,9 +7,12 @@ module.exports = (cmd, params) => new Promise((resolve, reject) => {
     const child = exec(cmd + ' ' + params, {
       env: { 
         ...process.env,
-        PATH: (process.env.PATH ? process.env.PATH + ';' : '') + path.join(__dirname, '..' , 'node_modules', '.bin'),
-        NODE_PATH: (process.env.NODE_PATH ? (process.env.NODE_PATH + ';') : '') 
-                  + path.join(__dirname, '../node_modules'),
+        PATH: 
+          (process.env.PATH ? process.env.PATH + ';' : '') 
+          + path.join(__dirname, '..' , '..', 'node_modules', '.bin'),
+        NODE_PATH:
+          (process.env.NODE_PATH ? (process.env.NODE_PATH + ';') : '') 
+          + path.join(__dirname, '../../node_modules'),
       }
     });
 
@@ -28,9 +31,12 @@ module.exports = (cmd, params) => new Promise((resolve, reject) => {
       shell: 'bash',
       env: { 
         ...process.env,
-        PATH: (process.env.PATH ? process.env.PATH + ':' : '') + path.join(__dirname, '..', 'node_modules', '.bin'),
-        NODE_PATH: (process.env.NODE_PATH ? (process.env.NODE_PATH + ':') : '') 
-                    + path.join(__dirname, '../node_modules'),
+        PATH:
+          (process.env.PATH ? process.env.PATH + ':' : '')
+          + path.join(__dirname, '..', '..', 'node_modules', '.bin'),
+        NODE_PATH: 
+          (process.env.NODE_PATH ? (process.env.NODE_PATH + ':') : '') 
+          + path.join(__dirname, '../../node_modules'),
       }
     });
 
