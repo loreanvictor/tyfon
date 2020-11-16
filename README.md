@@ -1,6 +1,6 @@
 <div align="center">
   <img src="/tyfon-type.svg" width="256px"/>
-  <span><b>Ty</b>ped <b>F</b>unctions <b>O</b>ver <b>N</b>etwork</span>
+  <div><b>Ty</b>ped <b>F</b>unctions <b>O</b>ver <b>N</b>etwork</div>
 </div>
 
 <br><br>
