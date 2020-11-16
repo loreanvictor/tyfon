@@ -7,10 +7,17 @@ app.use(require('cors')());
 app.use(require('body-parser').json());
 
 let name = 'Tyfon App';
+let package = {};
 try {
-  const package = require('../package.json');
+  package = require('../package.json');
   name = package.name;
 } catch {}
+
+const __api = require('./__api.json');
+
+app.get('/__api', (req, res) => {
+  res.status(200).send(__api);
+});
 
 const extract = src => {
   const params = [];
