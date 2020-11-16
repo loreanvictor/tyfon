@@ -16,7 +16,7 @@ npm i tyfon -g
 
 ## Usage
 
-## Server-Side
+### Server-Side
 
 Suppose you have `index.ts`:
 ```ts
@@ -33,9 +33,9 @@ tyfon serve
 
 Now open `localhost:8000/msg?0=World`.
 
-<br><br>
+<br>
 
-## Client-Side
+### Client-Side
 
 ```bash
 tyfon add localhost:8000
