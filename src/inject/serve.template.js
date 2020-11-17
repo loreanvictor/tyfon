@@ -33,7 +33,7 @@ const extract = src => {
 
 const run = (func, params, res) => {
   (async() => { return await func(...extract(params)); })()
-  .then(result => res.status(200).send(result))
+  .then(result => res.status(200).json(result))
   .catch(error => {
     console.log(error);
     res.status(500).send(\`\$\{error\}\`);
@@ -47,17 +47,19 @@ const source = req => {
   if (req.method === 'DELETE') return req.query;
 }
 
-const postfix = (post, name) => post.toLowerCase() + name[0].toUpperCase() + name.substr(1);
+const prefix = (pre, name) => pre.toLowerCase() + name[0].toUpperCase() + name.substr(1);
+
+const possibleFuncNames = req => {
+  const name = req.params.method;
+  if (req.method === 'GET') return [prefix('get', name)];
+  if (req.method === 'POST') return [name, prefix('post', name), prefix('add', name), prefix('create', name)];
+  if (req.method === 'PUT') return [prefix('put', name), prefix('update', name), prefix('set', name)];
+  if (req.method === 'DELETE') return [prefix('delete', name), prefix('remove', name)];
+}
 
 const find = req => {
-  const name = req.params.method;
-  const post = postfix(req.method, name);
-
-  if (req.method === 'POST') {
-    return functions[name] || functions[post];
-  } else {
-    return functions[post];
-  }
+  const name = possibleFuncNames(req).find(n => n in functions);
+  return name ? functions[name] : undefined;
 }
 
 app.all('/:method', (req, res) => {

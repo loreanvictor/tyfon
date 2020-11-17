@@ -3,7 +3,7 @@ const path = require('path');
 
 const exec = require('../util/exec');
 const serveCode = require('../inject/serve.template');
-const name = require('./name');
+const info = require('./info');
 const types = require('./types');
 const funcs = require('./funcs');
 
@@ -14,10 +14,10 @@ module.exports = async () => {
 
   const _types = await types();
   const _funcs = await funcs();
-  const _name = await name();
+  const _info = await info();
 
   await fs.writeFile(path.join('dist', '__api.json'), JSON.stringify({
-    name: _name,
+    ..._info,
     types: _types,
     funcs: _funcs
   }, undefined, 2));
