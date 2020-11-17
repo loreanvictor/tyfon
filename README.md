@@ -78,28 +78,65 @@ getMessage('World').then(console.log);
 
 ## Conventions
 
-TyFON aligns heavily towards _convention over configuration_ mantra. You need to follow these rules for TyFON to work properly:
-
-- Remote functions **MUST** be exported from `index.ts`
-- Remote functions **MUST** be `async`
-- Argument types and return types **MUST** be plain JavaScript objects
-
-Additionally, TyFON follows these conventions:
-
-- Applicable HTTP methods are deduced based on function name:
-- `getX()` will be bound to `GET /x`
-- `updateX()`, `setX()` and `putX()` will be bound to `PUT /x`
-- `deleteX()` and `removeX()` will be bound to `DELETE /x`
-- `postX()`, `addX()`, `createX()` and `x()` will be bound to `POST /x`
-
-- Package name (in `package.json`) on server-side code is used as client-side SDK package name `@api/<package-name>`
-- SDKs of the same server name (same package name) _will override_ each other
+TyFON leans heavily towards the _convention over configuration_ principle. It is pretty opinionated in how it wraps normal functions within
+API end-points and how code should be structured, for example it picks endpoint methods based on the name of the function, or it expects
+all API functions to be exported from `index.ts` from the root of the project.
 
 <br>
 
-> ⚠️⚠️**IMPORTANT**⚠️⚠️
->
-> Exported types also **MUST** be local, i.e. you should not export types from dependencies, neither should
-> the types used in exported functions be dependent on types from dependencies.
->
-> However, this is more of a technical limitation right now, and might be removed later on (or might become a standard convention).
+### Conventions You Must Follow
+
+```
+⚖️ Remote functions and only remote functions MUST be exported from index.ts
+```
+```
+⚖️ Remote functions MUST be async or return a Promise
+```
+```
+⚖️ Argument types and return types MUST be plain JavaScript objects
+```
+```
+⚖️ Exported types MUST be local
+   i.e. argument types and return types of exported functions
+   should not depend on any dependencies.
+```
+☝️ This rule is more of a technical limitation right now, and might get removed later on.
+
+
+<br>
+
+### Conventions You Should Know
+
+```
+⚖️ Client SDK will be named @api/<server-name>,
+   where <server-name> comes from package.json on server-side code.
+```
+```
+⚖️ If two client SDKs share the same name, the one installed later overwrites the former.
+```
+☝️ So always pick a proper name for your server-side code when you do `npm init`.
+
+<br>
+
+### Function-to-Endpoint Mapping Convention
+
+```
+⚖️ Function's name is used to determine the URL of its corresponding endpoint and its HTTP method:
+
+- getSomething()    ---> GET    /something
+
+- addSomething()    ---> POST   /something
+- createSomething() ---> POST   /something
+
+- postSomething()   ---> POST   /something
+- updateSomething() ---> PUT    /something
+- setSomething()    ---> PUT    /something
+
+- putSomething()    ---> PUT    /something
+- deleteSomething() ---> DELETE /something
+- removeSomething() ---> DELETE /something
+
+- whateverElse()    ---> POST   /whateverElse
+```
+
+<br><br>
