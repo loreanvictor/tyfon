@@ -66,7 +66,7 @@ tyfon build                      # --> run this on server side code
 
 ► Add the SDK on client side:
 ```bash
-tyfon i localhost:8000           # --> run this on client side code
+tyfon install localhost:8000     # --> run this on client side code
 ```
 
 👉 Now use the functions:
@@ -76,3 +76,25 @@ import { getMessage } from '@api/my-server';
 
 getMessage('World').then(console.log);
 ```
+
+<br><br>
+
+## Conventions
+
+TyFON aligns heavily towards _convention over configuration_ mantra. You need to follow these rules for TyFON to work properly:
+
+- Remote functions **MUST** be exported from `index.ts`
+- Remote functions **MUST** be `async`
+- Exported type information **MUST** be local (not coming from dependencies)
+- Argument types and return types **MUST** be plain JavaScript objects
+
+Additionally, TyFON follows these conventions:
+
+- Applicable HTTP methods are deduced based on function name:
+  - `getX()` will be bound to `GET /x`
+  - `updateX()`, `setX()` and `putX()` will be bound to `PUT /x`
+  - `deleteX()` and `removeX()` will be bound to `DELETE /x`
+  - `postX()` and `x()` will be bound to `POST /x`
+
+- Package name (in `package.json`) on server-side code is used as client-side SDK package name `@api/<package-name>`
+  - SDKs of the same server name WILL override each other
