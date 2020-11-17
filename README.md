@@ -51,7 +51,7 @@ tyfon init
 tyfon serve
 ```
 
-👉 Check it out on `localhost:8000/message?0=World`.
+> 👉 Check it out on `localhost:8000/message?0=World`.
 
 <br>
 
@@ -71,6 +71,8 @@ import { getMessage } from '@api/my-server';
 
 getMessage('World').then(console.log);
 ```
+
+> 👉 The name `my-server` comes from `package.json` of your server code.
 
 <br><br>
 
