@@ -128,12 +128,12 @@ all API functions to be exported from `index.ts` from the root of the project.
 
 - addSomething()    ---> POST   /something
 - createSomething() ---> POST   /something
-
 - postSomething()   ---> POST   /something
+
 - updateSomething() ---> PUT    /something
 - setSomething()    ---> PUT    /something
-
 - putSomething()    ---> PUT    /something
+
 - deleteSomething() ---> DELETE /something
 - removeSomething() ---> DELETE /something
 
