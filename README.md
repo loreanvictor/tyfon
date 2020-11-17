@@ -85,7 +85,6 @@ TyFON aligns heavily towards _convention over configuration_ mantra. You need to
 
 - Remote functions **MUST** be exported from `index.ts`
 - Remote functions **MUST** be `async`
-- Exported type information **MUST** be local (not coming from dependencies)
 - Argument types and return types **MUST** be plain JavaScript objects
 
 Additionally, TyFON follows these conventions:
@@ -94,7 +93,12 @@ Additionally, TyFON follows these conventions:
   - `getX()` will be bound to `GET /x`
   - `updateX()`, `setX()` and `putX()` will be bound to `PUT /x`
   - `deleteX()` and `removeX()` will be bound to `DELETE /x`
-  - `postX()` and `x()` will be bound to `POST /x`
+  - `postX()`, `addX()` and `x()` will be bound to `POST /x`
 
 - Package name (in `package.json`) on server-side code is used as client-side SDK package name `@api/<package-name>`
-  - SDKs of the same server name WILL override each other
+  - SDKs of the same server name (same package name) _will override_ each other
+
+> ⚠️ Exported types also **MUST** be local, i.e. you should not export types from dependencies, neither should
+> the types used in exported functions be dependent on types from dependencies.
+>
+> However, this is more of a technical limitation right now, and might be removed later on (or might become a standard convention).
