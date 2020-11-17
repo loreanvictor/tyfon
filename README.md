@@ -72,7 +72,7 @@ tyfon i localhost:8000           # --> run this on client side code
 👉 Now use the functions:
 
 ```ts
-import { getMessage } from '@api/backend';
+import { getMessage } from '@api/my-server';
 
-getMsg('World').then(console.log);
+getMessage('World').then(console.log);
 ```
