@@ -121,7 +121,8 @@ all API functions to be exported from `index.ts` from the root of the project.
 ### Function-to-Endpoint Mapping Convention
 
 ```
-⚖️ Function's name is used to determine the URL of its corresponding endpoint and its HTTP method:
+⚖️ Function's name is used to determine the URL of its corresponding endpoint
+   and its HTTP method:
 
 - getSomething()    ---> GET    /something
 
