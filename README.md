@@ -5,46 +5,70 @@
 
 <br><br>
 
-TyFON serves simple TypeScript functions over network and makes it extremely easy to consume them. It is a CLI tool that
-generates necessary wrapper code and metadata for your functions to be served and can consume metadata served on other TyFON instances
-to generate client-side SDK with exactly the same types.
+TyFON is a zero-config RPC for TypeScript. It automatically creates all required networking code on the server-side and generates client-side SDK using same type definitions for client-server consistency.
+
+```ts
+// server:
+
+export async function getMessage(name: string) {
+  return `Hellow ${name}!`;
+}
+```
+```ts
+// client:
+
+import { getMessage } from '@api/my-server';
+
+getMessage('World').then(console.log):
+```
+
+<br><br>
+
+## Installation
+
+TyFON is a singular CLI tool that runs on Node, so you need Node.js installed beforehand.
 ```bash
-npm i tyfon -g
+npm i -g tyfon
 ```
 
 <br><br>
 
 ## Usage
 
-### Server-Side
+### Server Side
 
-Suppose you have `index.ts`:
+👉 Export your functions in `index.ts`:
+
 ```ts
-export function getMsg(name: string) {
-  return `Hellow ${name}!`;
-}
+export async const getMessage = name => `Hellow ${name}!`;
 ```
 
-Init tyfon and serve your function:
+👉 Initialize TyFON:
 ```bash
 tyfon init
+```
+
+👉 Serve your API:
+```bash
 tyfon serve
 ```
 
-Now open `localhost:8000/msg?0=World`.
+👀 Check it out on `localhost:8000/message?0=World.
 
 <br>
 
-### Client-Side
+### Client Side
+
+👉 Add the SDK:
 
 ```bash
-tyfon add localhost:8000
+tyfon install localhost:8000
 ```
 
-In your client-side code, use the function like any other package:
+👉 Now use the functions:
 
 ```ts
-import { getMsg } from '@api/backend';
+import { getMessage } from '@api/backend';
 
 getMsg('World').then(console.log);
 ```
