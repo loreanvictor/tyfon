@@ -43,12 +43,10 @@ npm i -g tyfon
 export async const getMessage = name => `Hellow ${name}!`;
 ```
 
-► Initialize TyFON:
+► Initialize TyFON and serve:
 ```bash
 tyfon init
 ```
-
-► Serve your API:
 ```bash
 tyfon serve
 ```
@@ -64,13 +62,10 @@ tyfon serve
 tyfon build                      # --> run this on server side code
 ```
 
-► Add the SDK on client side:
+► Add the SDK on client side and use it:
 ```bash
 tyfon install localhost:8000     # --> run this on client side code
 ```
-
-👉 Now use the functions:
-
 ```ts
 import { getMessage } from '@api/my-server';
 
