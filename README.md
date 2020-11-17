@@ -90,15 +90,19 @@ TyFON aligns heavily towards _convention over configuration_ mantra. You need to
 Additionally, TyFON follows these conventions:
 
 - Applicable HTTP methods are deduced based on function name:
-  - `getX()` will be bound to `GET /x`
-  - `updateX()`, `setX()` and `putX()` will be bound to `PUT /x`
-  - `deleteX()` and `removeX()` will be bound to `DELETE /x`
-  - `postX()`, `addX()` and `x()` will be bound to `POST /x`
+- `getX()` will be bound to `GET /x`
+- `updateX()`, `setX()` and `putX()` will be bound to `PUT /x`
+- `deleteX()` and `removeX()` will be bound to `DELETE /x`
+- `postX()`, `addX()` and `x()` will be bound to `POST /x`
 
 - Package name (in `package.json`) on server-side code is used as client-side SDK package name `@api/<package-name>`
-  - SDKs of the same server name (same package name) _will override_ each other
+- SDKs of the same server name (same package name) _will override_ each other
 
-> ⚠️ Exported types also **MUST** be local, i.e. you should not export types from dependencies, neither should
+<br>
+
+> ⚠️⚠️**IMPORTANT**⚠️⚠️
+>
+> Exported types also **MUST** be local, i.e. you should not export types from dependencies, neither should
 > the types used in exported functions be dependent on types from dependencies.
 >
 > However, this is more of a technical limitation right now, and might be removed later on (or might become a standard convention).
