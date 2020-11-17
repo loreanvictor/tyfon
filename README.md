@@ -1,7 +1,7 @@
-<div align="center">
+<p align="center">
   <img src="/tyfon-type.svg" width="320px"/>
-  <div><b>Ty</b>ped <b>F</b>unctions <b>O</b>ver <b>N</b>etwork</div>
-</div>
+  <p align="center"><b>Ty</b>ped <b>F</b>unctions <b>O</b>ver <b>N</b>etwork</p>
+</p>
 
 <br><br>
 
