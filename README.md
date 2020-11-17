@@ -59,10 +59,14 @@ tyfon serve
 
 ### Client Side
 
-▷ Add the SDK:
-
+▷ Build SDK metadata on server side:
 ```bash
-tyfon install localhost:8000
+tyfon build                      # --> run this on server side code
+```
+
+▷ Add the SDK on client side:
+```bash
+tyfon i localhost:8000           # --> run this on client side code
 ```
 
 👉 Now use the functions:
