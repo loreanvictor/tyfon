@@ -37,13 +37,13 @@ npm i -g tyfon
 
 ### Server Side
 
-▷ Export your functions in `index.ts`:
+▶ Export your functions in `index.ts`:
 
 ```ts
 export async const getMessage = name => `Hellow ${name}!`;
 ```
 
-▷ Initialize TyFON:
+▶ Initialize TyFON:
 ```bash
 tyfon init
 ```
@@ -59,12 +59,12 @@ tyfon serve
 
 ### Client Side
 
-▷ Build SDK metadata on server side:
+▶ Build SDK metadata on server side:
 ```bash
 tyfon build                      # --> run this on server side code
 ```
 
-▷ Add the SDK on client side:
+▶ Add the SDK on client side:
 ```bash
 tyfon i localhost:8000           # --> run this on client side code
 ```
