@@ -97,7 +97,7 @@ typhon serve -e ENV=dev -e LOGS=verbose
 
 ## Client Environments
 
-It is common practice for client-code to use different API URLs for development, staging or production.
+It is common practice for client-code to use different API URLs for different environments (i.e. development, production, staging, etc).
 You can use the `--env` flag on `typhon i` command to mark the environment a TyFON should be used in:
 ```bash
 tyfon i https://my-server.cloud --env production
