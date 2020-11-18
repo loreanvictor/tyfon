@@ -45,7 +45,8 @@ module.exports = (cmds, args) => {
     });
   }
   say();
-  say('👉 Read', l('https://github.com/loreanvictor/tyfon#readme'), 'for more information.')
+  say('👉 Read', l('https://github.com/loreanvictor/tyfon#readme'), 'for more info about TyFON.');
+  say('👉 Read', l('https://github.com/loreanvictor/tyfon#cli-reference'), 'for CLI reference.');
   say();
 }
 
