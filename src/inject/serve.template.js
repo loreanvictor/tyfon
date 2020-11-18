@@ -6,11 +6,11 @@ const app = express();
 app.use(require('cors')());
 app.use(require('body-parser').json());
 
-let name = 'Tyfon App';
+let serverName = 'Tyfon App';
 let package = {};
 try {
   package = require('../package.json');
-  name = package.name;
+  serverName = package.name;
 } catch {}
 
 const __api = require('./__api.json');
@@ -73,6 +73,6 @@ app.all('/:method', (req, res) => {
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
-  console.log(\`\$\{name\} listening at http://localhost:\$\{port\}\`)
+  console.log(\`\$\{serverName\} listening at http://localhost:\$\{port\}\`)
 });
 `

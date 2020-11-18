@@ -5,6 +5,7 @@ const shell = require('shelljs');
 const fs = require('fs').promises;
 
 const exec = require('../util/exec');
+const { say, cheer, err, ERR, l, g } = require('../util/echo');
 const createTypes = require('./create-types');
 const createMain = require('./create-main');
 const pack = require('./pack');
@@ -12,6 +13,10 @@ const pack = require('./pack');
 
 module.exports = async (url) => {
   try {
+    say();
+    say('🚚 Installing TyFON SDK for', l(url), g('...'));
+    say();
+    
     if (url.startsWith('localhost')) {
       url = 'http://' + url;
     }
@@ -36,7 +41,22 @@ module.exports = async (url) => {
     await createTypes(root, api.types || {});
     await createMain(url, root, api.funcs || []);
     await pack(root);
+
+    cheer();
+    cheer('📦 TyFON SDK for', l(url), 'installed successfully!');
+    cheer();
+
+    return {
+      name: pkg.name,
+      version: pkg.version,
+      url: url,
+    }
   } catch(error) {
-    console.log(error);
+    err();
+    ERR('Installing TyFON SDK for', l(url), 'failed!');
+    if (error) err(error);
+    err();
+
+    return undefined;
   }
 }
