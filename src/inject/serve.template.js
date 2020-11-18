@@ -37,7 +37,7 @@ const run = (func, params, res) => {
   .catch(error => {
     if (error) {
       const status = error.status || 500;
-      const msg = error.message || '';
+      const msg = (error.expose !== false) ? (error.message || '') : '';
       res.status(status).send(msg);
     } else {
       res.status(500).send();
