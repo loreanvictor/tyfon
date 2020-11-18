@@ -1,6 +1,6 @@
 {
   "name": "tyfon",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "typed functions over network",
   "main": "index.js",
   "bin": {

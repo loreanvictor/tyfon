@@ -32,7 +32,13 @@ module.exports = async (args) => {
 
 module.exports.hint = 'install TyFON SDK for given URL.';
 module.exports.usage = b('install') + ' <url>';
+module.exports.options = { 
+  '--env': 'environment of the SDKs',
+  '-e': 'shortcut for --env',
+}
 module.exports.examples = [
   'tyfon install localhost:8000',
-  'tyfon install https://my-server.cloud',
+  'tyfon install https://my-server.cloud --env prod',
+  'tyfon install',
+  'tyfon install --env prod',
 ]
