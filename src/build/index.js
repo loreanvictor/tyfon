@@ -34,6 +34,12 @@ module.exports = async () => {
     funcs: _funcs
   }, undefined, 2));
 
+  const version = require('../../package.json').version;
+  await fs.writeFile(path.join('dist', '__build.json'), JSON.stringify({
+    cliVersion: version,
+    date: new Date(),
+  }, undefined, 2));
+
   cheer();
   cheer('✅ Network layer code and client SDK metadata built! 🍻');
   cheer();
