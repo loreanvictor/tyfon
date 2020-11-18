@@ -24,7 +24,7 @@ getMessage('World').then(console.log):
 
 <br><br>
 
-## Installation
+# Installation
 
 TyFON is a singular CLI tool that runs on Node, so you need Node.js installed beforehand.
 ```bash
@@ -33,9 +33,9 @@ npm i -g tyfon
 
 <br><br>
 
-## Usage
+# Usage
 
-### Server Side
+## Server Side
 
 Export your functions in `index.ts`:
 
@@ -43,10 +43,7 @@ Export your functions in `index.ts`:
 export async const getMessage = name => `Hellow ${name}!`;
 ```
 
-Initialize TyFON and serve:
-```bash
-tyfon init
-```
+Now serve it:
 ```bash
 tyfon serve
 ```
@@ -55,16 +52,11 @@ tyfon serve
 
 <br>
 
-### Client Side
-
-Build SDK metadata on server side:
-```bash
-tyfon build                      # --> run this on server side code
-```
+## Client Side
 
 Add the SDK on client side and use it:
 ```bash
-tyfon install localhost:8000     # --> run this on client side code
+tyfon i localhost:8000
 ```
 ```ts
 import { getMessage } from '@api/my-server';
@@ -74,9 +66,53 @@ getMessage('World').then(console.log);
 
 👉 The name `my-server` comes from `package.json` of your server code.
 
+<br>
+
+## Syncing Updates
+
+On server-side code, rebuild client SDK metadata and serve it again:
+```bash
+tyfon build                      # --> run this on server side code
+```
+```bash
+tyfon serve
+```
+
+On client-side code, update TyFONs you are using:
+```bash
+tyfon i                          # --> run this on client side code
+```
+
+<br>
+
+## Server Environment Variables
+
+You can pass environment variables to `typhon serve` command using `-e` option:
+
+```bash
+typhon serve -e ENV=dev -e LOGS=verbose
+```
+
+<br>
+
+## Client Environments
+
+It is common practice for client-code to use different API URLs for development, staging or production.
+You can use the `--env` flag on `typhon i` command to mark the environment a TyFON should be used in:
+```bash
+tyfon i https://my-server.cloud --env production
+tyfon i https://staging.my-server.cloud --env staging
+tyfon i localhost:8000 --env dev
+```
+
+Now for building client-code in production, use the following command:
+```bash
+tyfon i --env production        # --> this will install all generic TyFONs and all production TyFONs
+```
+
 <br><br>
 
-## Conventions
+# Conventions
 
 TyFON leans heavily towards the _convention over configuration_ principle. It is pretty opinionated in how it wraps normal functions within
 API end-points and how code should be structured, for example it picks endpoint methods based on the name of the function, or it expects
@@ -84,7 +120,7 @@ all API functions to be exported from `index.ts` from the root of the project.
 
 <br>
 
-### Conventions You Must Follow
+## Conventions You Must Follow
 
 ```
 ⚖️ Remote functions and only remote functions MUST be exported from index.ts
@@ -105,7 +141,7 @@ all API functions to be exported from `index.ts` from the root of the project.
 
 <br>
 
-### Conventions You Should Know
+## Conventions You Should Know
 
 ```
 ⚖️ Client SDK will be named @api/<server-name>,
@@ -118,7 +154,7 @@ all API functions to be exported from `index.ts` from the root of the project.
 
 <br>
 
-### Function-to-Endpoint Mapping Convention
+## Function-to-Endpoint Mapping Convention
 
 ```
 ⚖️ Function's name is used to determine the URL of its corresponding endpoint
@@ -139,5 +175,140 @@ all API functions to be exported from `index.ts` from the root of the project.
 
 - whateverElse()    ---> POST   /whateverElse
 ```
+
+<br><br>
+
+# CLI Reference
+
+### `▶ tyfon init`
+
+> 👉 Run this on server-side!
+
+Initializes TyFON on server side, installing necessary dependencies.
+
+---
+
+<br>
+
+### `▶ tyfon build`
+
+> 👉 Run this on server-side!
+
+Generates necessary network-layer code and SDK metadata. Will automatically invoke `tyfon init` if not initialized.
+
+> 💡You can use `tyfon b` as a shortcut for this command.
+
+---
+
+<br>
+
+### `▶ tyfon serve`
+
+> 👉 Run this on server-side!
+
+Serves the built server code. Will reload the server when the code changes, and will automatically call `tyfon build` if never built before.
+
+‼️`tyfon serve` **WILL NOT** rebuild SDK metadata when server-side code changes. You **MUST** call `tyfon build` for updating SDK metadata.
+
+#### options:
+
+`-p` or `--port`: Determines the port to serve on. Default is `8000`.
+```bash
+tyfon serve -p 3000
+```
+`-e` or `--env`: Allows setting environment variables for the server-side code.
+```bash
+tyfon serve -e ENV=dev -e UPLOAD_DIR=./uploads
+```
+
+> 💡 You can use `tyfon s` as a shortcut for this command.
+
+---
+
+<br>
+
+### `▶ tyfon install <url>`
+
+> 👉 Run this on client-side!
+
+Will install SDK of the TyFON served on `<url>` as an NPM package. Assuming that the server-side code has `my-server` as its package name (in `package.json`),
+the SDK package will be named `@api/my-server`. Will override any previous package with that name. It will also store the SDK information in local `package.json` so that all necessary TyFONs can later be installed using `tyfon i`.
+
+#### options:
+
+`-e` or `--env`: Marks the environment for the installed SDK. By default, `"all"` is used.
+```bash
+tyfon i localhost:8000 --env dev
+```
+
+> 💡 You can use `tyfon i` as a shortcut for this command.
+
+---
+
+<br>
+
+### `▶ tyfon install`
+
+> 👉 Run this on client-side!
+
+Will install all TyFON SDKs stored in `package.json` that match given environment.
+If no environment is given, only SDKs that are marked for `"all"` environments will be installed.
+
+#### options:
+
+`-e` or `--env`: Specifies the environment for which SDKs should be installed.
+```bash
+tyfon install             # --> installs all SDKs with "all" environment
+```
+```bash
+tyfon install --env dev   # --> installs all SDKs with "all" or "dev" environment
+```
+
+> 💡 You can use `tyfon i` as a shortcut for this command.
+
+---
+
+<br>
+
+### `▶ tyfon uninstall <url|package-name>`
+
+> 👉 Run this on client-side!
+
+Will uninstall the TyFON SDK corresponding to given URL or package name.
+
+```bash
+tyfon uninstall localhost:8000
+```
+```bash
+tyfon uninstall @api/my-server
+```
+
+---
+
+<br>
+
+### `▶ tyfon version`
+
+Displayes the installed version of the CLI, alongside the latest version on NPM.
+
+> 💡 You can use `tyfon v` as a shortcut for this command.
+
+---
+
+<br>
+
+### `▶ tyfon help`
+
+Displays available commands and a short summary of what each would do. You can also pass it an argument
+to see more information about each command:
+
+```bash
+tyfon help
+```
+```bash
+tyfon help serve
+```
+
+> 💡 You can use `tyfon h` as a shortcut for this command.
 
 <br><br>
