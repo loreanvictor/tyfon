@@ -75,7 +75,7 @@ On server-side code, rebuild client SDK metadata and serve it again:
 tyfon build                      # --> run this on server side code
 ```
 ```bash
-tyfon serve
+tyfon serve                      # --> run this on server side code
 ```
 
 On client-side code, update TyFONs you are using:
