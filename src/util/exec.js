@@ -2,11 +2,12 @@ const path = require('path');
 const { exec, spawn } = require('child_process');
 
 
-module.exports = (cmd, params) => new Promise((resolve, reject) => {
+module.exports = (cmd, params, env) => new Promise((resolve, reject) => {
   if (process.platform === 'win32') {
     const child = exec(cmd + ' ' + params, {
       env: { 
         ...process.env,
+        ...(env || {}),
         PATH: 
           (process.env.PATH ? process.env.PATH + ';' : '') 
           + path.join(__dirname, '..' , '..', 'node_modules', '.bin'),
@@ -31,6 +32,7 @@ module.exports = (cmd, params) => new Promise((resolve, reject) => {
       shell: 'bash',
       env: { 
         ...process.env,
+        ...(env || {}),
         PATH:
           (process.env.PATH ? process.env.PATH + ':' : '')
           + path.join(__dirname, '..', '..', 'node_modules', '.bin'),

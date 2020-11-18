@@ -14,13 +14,22 @@ module.exports = async (args) => {
   say();
 
   const port = args.p || args.port || 8000;
-  const env = [
-    `PORT=${port}`, 
-    ...args.e ? (Array.isArray(args.e) ? args.e : [args.e]) : [],
-    ...args.env ? (Array.isArray(args.env) ? args.e : [args.env]) : [],
-  ];
+  const env = { PORT: port };
+  if (args.e) {
+    (Array.isArray(args.e) ? args.e : [args.e]).forEach(arg => {
+      const split = arg.split('=');
+      env[split[0]] = split[1];
+    });
+  }
 
-  await exec(`${env.join(' ')} ts-node-dev`, 'dist/__serve');
+  if (args.env) {
+    (Array.isArray(args.env) ? args.env : [args.env]).forEach(arg => {
+      const split = arg.split('=');
+      env[split[0]] = split[1];
+    });
+  }
+
+  await exec(`ts-node-dev`, 'dist/__serve', env);
 }
 
 module.exports.hint = `serve functions exported from local ${l('index.ts')}`
