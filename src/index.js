@@ -29,7 +29,7 @@ const rest = { ...args, _: args._.slice(1) };
       err();
     }
   } else {
-    if (cmd.length > 0) {
+    if (cmd && cmd.length > 0) {
       err();
       ERR('unrecognized command:', e(cmd))
       err();
