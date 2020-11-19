@@ -221,11 +221,12 @@ Generates necessary network-layer code and SDK metadata. Will automatically invo
 
 #### options:
 
-`-i` or `--image`: The name/tag of the docker image to build:
+`-i` or `--image`: The name/tag of the docker image to build _(OPTIONAL)_:
 ```bash
 tyfon build --image my-docker-image
 ```
-If image is specified, only the docker image will be built (so no builds in local filesystem).
+If no image name/tag is specified, will build to local filesystem.
+If image name/tag is specified, only the docker image will be built.
 This option only works if [docker](https://www.docker.com) is installed.
 
 > 💡You can use `tyfon b` as a shortcut for this command.
@@ -252,6 +253,11 @@ tyfon serve -p 3000
 ```bash
 tyfon serve -e ENV=dev -e UPLOAD_DIR=./uploads
 ```
+`-m` or `--mode`: Sets the running mode:
+```bash
+tyfon serve -m prod
+```
+In production mode, live-reloading of the code is turned off. It also has a faster bootup since transpiled JavaScript code is used (instead of your TypeScript files).
 
 > 💡 You can use `tyfon s` as a shortcut for this command.
 
