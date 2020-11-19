@@ -110,6 +110,29 @@ Now for building client-code in production, use the following command:
 tyfon i --env production        # --> this will install all generic TyFONs and all production TyFONs
 ```
 
+<br>
+
+## Deploying
+
+Run your TyFON in production mode:
+
+```bash
+tyfon serve --mode prod
+```
+
+### Docker
+
+Build a docker image and deploy it:
+
+```bash
+tyfon build --image my-server
+
+docker tag my-server https://my-registry.cloud/my-server
+docker push my-server
+```
+
+👉 [docker](https://www.docker.com) **MUST** be installed for using this option.
+
 <br><br>
 
 # Conventions
@@ -195,6 +218,15 @@ Initializes TyFON on server side, installing necessary dependencies.
 > 👉 Run this on server-side!
 
 Generates necessary network-layer code and SDK metadata. Will automatically invoke `tyfon init` if not initialized.
+
+#### options:
+
+`-i` or `--image`: The name/tag of the docker image to build:
+```bash
+tyfon build --image my-docker-image
+```
+If image is specified, only the docker image will be built (so no builds in local filesystem).
+This option only works if [docker](https://www.docker.com) is installed.
 
 > 💡You can use `tyfon b` as a shortcut for this command.
 

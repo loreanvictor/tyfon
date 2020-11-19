@@ -19,6 +19,7 @@ module.exports = {
   g: (...stuff) => chalk`{hex('${GRAY}') ${stuff.join(' ')}}`,
   e: (...stuff) => chalk`{hex('${ERR}') ${stuff.join(' ')}}`,
   c: (...stuff) => chalk`{hex('${CHEERS}') ${stuff.join(' ')}}`,
+  w: (...stuff) => chalk`{hex('${WARN}') ${stuff.join(' ')}}`,
   bash: (...stuff) => chalk`{hex('${PRIMARY}') $} {hex('${LGRAY}') ${stuff.join(' ')}}`,
 
   pad: (L, ...stuff) => {

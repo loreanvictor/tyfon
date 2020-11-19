@@ -1,6 +1,18 @@
 module.exports = () => `
+const isProd = () => (
+  process.env.ENV && (
+    process.env.ENV.toLowerCase() === 'prod'
+    || process.env.ENV.toLowerCase() === 'production'
+  )
+) || (
+  process.env.TYFON_SERVE_MODE && (
+    process.env.TYFON_SERVE_MODE.toLowerCase() === 'prod'
+    || process.env.TYFON_SERVE_MODE.toLowerCase() === 'production'
+  )
+);
+
 const express = require('express');
-const functions = require('../index');
+const functions = isProd() ? require('./index') : require('../index');
 const app = express();
 
 app.use(require('cors')());
