@@ -78,6 +78,11 @@
   ],
   "components": [
     {
+      "name": "CollapseControl",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/collapse/collapse-control.js",
+      "hash": "VSPURy3/fewHOUHvc6t6Sw=="
+    },
+    {
       "name": "ToCPrevNext",
       "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/toc/prevnext/index.js",
       "hash": "jf+f6hvXtTNPzvsyHeVuJw=="
