@@ -1,11 +1,11 @@
 > :DarkLight
 > > :InDark
 > >
-> > ![logo](/tyfon-banner-dark.svg)
+> > ![logo](/docs/assets/tyfon-banner-dark.svg)
 >
 > > :InLight
 > >
-> > ![logo](/tyfon-banner.svg)
+> > ![logo](/docs/assets/tyfon-banner.svg)
 
 TyFON is a zero-config RPC for TypeScript. It automatically creates all required networking code on the server-side and generates client-side SDK using same type definitions for client-server consistency.
 
@@ -28,38 +28,73 @@ getMessage('World').then(console.log):
 
 # Getting Started
 
-To get a feeling of how TyFON works, lets create a simple server and client:
+To get a feeling of how TyFON works, lets create a simple server and client. You need
+[Node.js](https://nodejs.org/en/) installed before you can proceed.
 
 <br>
 
-👉 **STEP 1**\
-Install TyFON CLI.
+## 👉 Install TyFON
 ```bash
 npm i -g tyfon
 ```
 
 <br>
 
-👉 **STEP 2**\
- Create a folder for your server code.
+## 👉 Setup a Server
+Create a folder for your server code.
 ```bash
 mkdir my-tyfon-server
 cd my-tyfon-server
 ```
+
 Create `package.json`:
-```json | my-tyfon-server/package.json
+```json
 {
   "name": "my-tyfon-server"
 }
 ```
+
 Create `index.ts`:
-```ts | my-tyfon-server/index.ts
-// this is all you need for your server-side code 😎😎
+```ts
 export const getMessage = async name => `Hellow ${name}!`;
 ```
+
 Serve it:
 ```bash
 tyfon serve
+```
+
+> 🚀 Check it out on http://localhost:8000/message?0=World
+
+<br><br>
+
+## 👉 Setup a Client
+In a new terminal, create a folder for your client code (keep the server running):
+
+```bash
+mkdir my-tyfon-client
+cd my-tyfon-client
+npm i -g ts-node
+npm init
+```
+
+Install your server's SDK:
+```bash
+tyfon i localhost:8000
+```
+
+Create `index.ts`:
+
+```ts
+import { getMessage } from '@api/my-tyfon-server';
+
+getMessage('World').then(console.log);
+```
+
+Run it:
+```bash
+ts-node .
+> Hellow World!
 ```
 
 > :ToCPrevNext

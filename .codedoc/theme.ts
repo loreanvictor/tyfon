@@ -7,18 +7,18 @@ export const theme = /*#__PURE__*/createTheme({
   },
   dark: {
     primary: '#c355f5',
-    background: '#000000',
+    background: '#080808',
     border: '#0A0A0A'
   },
   toc: {
     dark: {
-      background: '#050505',
-      border: '#0A0A0A',
+      background: '#0C0C0C',
+      border: '#111111',
     }
   },
   quote: {
     dark: {
-      background: '#0A0A0A',
+      background: '#0C0C0C',
       border: '#111111'
     }
   },
@@ -28,7 +28,7 @@ export const theme = /*#__PURE__*/createTheme({
       shadow: 'none'
     },
     dark: {
-      shadow: '0 0 2px #212121'
+      shadow: 'none'
     }
   }
 });
