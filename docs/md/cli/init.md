@@ -1,0 +1,3 @@
+# `tyfon init`
+
+> :ToCPrevNext

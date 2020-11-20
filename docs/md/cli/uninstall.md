@@ -1,0 +1,3 @@
+# `tyfon uninstall`
+
+> :ToCPrevNext

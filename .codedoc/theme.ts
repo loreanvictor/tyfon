@@ -8,7 +8,7 @@ export const theme = /*#__PURE__*/createTheme({
   dark: {
     primary: '#c355f5',
     background: '#080808',
-    border: '#0A0A0A'
+    border: '#181818'
   },
   toc: {
     dark: {
