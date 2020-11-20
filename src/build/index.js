@@ -13,7 +13,7 @@ const buildDockerImage = require('./docker');
 const { say, cheer, w } = require('../util/echo');
 
 
-module.exports = async (args) => {
+module.exports = async (args = {}) => {
   if (!await init.check(true)) {
     await init();
   }

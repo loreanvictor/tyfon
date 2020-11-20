@@ -5,7 +5,7 @@ const init = require('./init');
 const build = require('./build');
 
 
-module.exports = async (args) => {
+module.exports = async (args = {}) => {
   if (!await init.check(true)) await init();
   if (!await build.check(true)) await build();
 

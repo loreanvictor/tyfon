@@ -4,7 +4,7 @@ const exec = require('./util/exec');
 const { g, h, b, l, say } = require('./util/echo');
 
 
-module.exports = async (args) => {
+module.exports = async (args = {}) => {
   const pkg = JSON.parse(await fs.readFile('package.json'));
   if (!pkg.tyfons) return;
 

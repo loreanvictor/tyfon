@@ -3,7 +3,7 @@ const install = require('./install-package');
 const { say, b, i } = require('../util/echo');
 
 
-module.exports = async (args) => {
+module.exports = async (args = {}) => {
   const env = args.env || args.e || 'all';
 
   if (args._.length > 0) {

@@ -1,7 +1,7 @@
 const { ERR, err, say, bash, pad, h, b, i, e, l } = require('./util/echo');
 
 
-module.exports = (cmds, args) => {
+module.exports = (cmds, args = {}) => {
   if (args._[0]) {
     const cmd = args._[0];
     const mod = cmds.commands[cmd] || cmds.shortcuts[cmd];
