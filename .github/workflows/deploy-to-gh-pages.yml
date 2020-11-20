@@ -21,7 +21,7 @@ jobs:
           # copy assets
           # cp favicon.ico dist/
           mkdir -p dist/docs
-          cp -r docs/assets dist/docs/assets
+          # cp -r docs/assets dist/docs/assets
           # mark no jekyll
           touch dist/.nojekyll
         env:
