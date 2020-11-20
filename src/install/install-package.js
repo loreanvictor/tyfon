@@ -5,7 +5,7 @@ const shell = require('shelljs');
 const fs = require('fs').promises;
 
 const exec = require('../util/exec');
-const { say, cheer, err, ERR, l, g } = require('../util/echo');
+const { say, cheer, err, ERR, l, g, h } = require('../util/echo');
 const createTypes = require('./create-types');
 const createMain = require('./create-main');
 const pack = require('./pack');
@@ -43,7 +43,7 @@ module.exports = async (url) => {
     await pack(root);
 
     cheer();
-    cheer('📦 TyFON SDK for', l(url), 'installed successfully!');
+    cheer('📦 TyFON SDK for', l(url), '(', h(`@api/${api.name}`), ') installed successfully!');
     cheer();
 
     return {
