@@ -1,0 +1,111 @@
+{
+  "init": [
+    {
+      "name": "initJssCs",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/transport/setup-jss.js",
+      "hash": "ujXZ/hWLZMyC3k/Ntt/dWQ=="
+    },
+    {
+      "name": "installTheme",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/content/theme.ts",
+      "hash": "6TFUkNSDQqgw+E01Ez8mtA=="
+    },
+    {
+      "name": "codeSelection",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/code/selection.js",
+      "hash": "AIXwx5jcv9M3Jav2ZW9sDg=="
+    },
+    {
+      "name": "sameLineLengthInCodes",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/code/same-line-length.js",
+      "hash": "mREWtoBPwLAmQOscIfVaTA=="
+    },
+    {
+      "name": "initHintBox",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/code/line-hint/index.js",
+      "hash": "BKzevYIsgOtNZOWyS0jpOQ=="
+    },
+    {
+      "name": "initCodeLineRef",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/code/line-ref/index.js",
+      "hash": "+yo9TXug6NOka78yhL99lA=="
+    },
+    {
+      "name": "initSmartCopy",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/code/smart-copy.js",
+      "hash": "p4984yETM7y9XJs/vOm+fw=="
+    },
+    {
+      "name": "copyHeadings",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/heading/copy-headings.js",
+      "hash": "9bawHIzhGtvbTBa79YN0cg=="
+    },
+    {
+      "name": "contentNavHighlight",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/contentnav/highlight.js",
+      "hash": "PTevixS2oyX2DFzfRy82wA=="
+    },
+    {
+      "name": "loadDeferredIFrames",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/transport/deferred-iframe.js",
+      "hash": "HfjxE6Gv+7DFerU+tMmSiA=="
+    },
+    {
+      "name": "smoothLoading",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/transport/smooth-loading.js",
+      "hash": "Ty2KrUA+X6Y8+WgCKyPLbQ=="
+    },
+    {
+      "name": "tocHighlight",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/toc/toc-highlight.js",
+      "hash": "54JIWmTtSR4vL+VuAb1E6Q=="
+    },
+    {
+      "name": "postNavSearch",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/toc/search/post-nav/index.js",
+      "hash": "tOKIADKlwWrptq89Id0+lg=="
+    },
+    {
+      "name": "copyLineLinks",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/code/line-links/copy-line-link.js",
+      "hash": "U78uof6aXS8OQfThYmw4ew=="
+    },
+    {
+      "name": "gatherFootnotes",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/footnote/gather-footnotes.js",
+      "hash": "xNv3C0VCD7Zh9oIeH+IUpw=="
+    }
+  ],
+  "components": [
+    {
+      "name": "ToCPrevNext",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/toc/prevnext/index.js",
+      "hash": "jf+f6hvXtTNPzvsyHeVuJw=="
+    },
+    {
+      "name": "GithubSearch",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/misc/github/search.js",
+      "hash": "X8M/kI7ZQlXeK48MkLKRdw=="
+    },
+    {
+      "name": "ToCToggle",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/toc/toggle/index.js",
+      "hash": "Ho42pdNbqDRNVrahGjYRTA=="
+    },
+    {
+      "name": "DarkModeSwitch",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/components/darkmode/index.js",
+      "hash": "9Jn5F/lxOYDy0C5zsgyQAg=="
+    },
+    {
+      "name": "ConfigTransport",
+      "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/transport/config.js",
+      "hash": "MKKzc1snuLDsbRdUdcWHwg=="
+    }
+  ],
+  "renderer": {
+    "name": "getRenderer",
+    "filename": "/home/runner/work/tyfon/tyfon/.codedoc/node_modules/@codedoc/core/dist/es6/transport/renderer.js",
+    "hash": "76JNFvJD9ZnZ8526GliaNA=="
+  }
+}
