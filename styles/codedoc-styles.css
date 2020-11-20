@@ -128,7 +128,7 @@ body.dark .darklight-0-0-1>.dark {
   body:not(.dark-mode-animate) .code-0-0-2 {
     color: #e0e0e0;
     background: #000000;
-    box-shadow: 0 0 2px #212121;
+    box-shadow: none;
   }
   body:not(.dark-mode-animate) .code-0-0-2 .token.keyword {
     color: #7187ff;
@@ -206,7 +206,7 @@ body.dark .darklight-0-0-1>.dark {
   body.dark .code-0-0-2 {
     color: #e0e0e0;
     background: #000000;
-    box-shadow: 0 0 2px #212121;
+    box-shadow: none;
   }
   body.dark .code-0-0-2 .token.keyword {
     color: #7187ff;
@@ -662,11 +662,11 @@ body.dark .darklight-0-0-1>.dark {
   }
 @media (prefers-color-scheme: dark) {
   body:not(.dark-mode-animate) .footer-0-0-12 {
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(8, 8, 8, 0.85);
   }
 }
   body.dark .footer-0-0-12 {
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(8, 8, 8, 0.85);
   }
   .footer-0-0-12 .main {
     overflow: hidden;
@@ -735,13 +735,13 @@ body.dark .darklight-0-0-1>.dark {
     transition: background .3s, border-color .3s;
   }
   body.dark .toc-0-0-13 {
-    background: #050505;
-    border-color: #0A0A0A;
+    background: #0C0C0C;
+    border-color: #111111;
   }
 @media (prefers-color-scheme: dark) {
   body:not(.dark-mode-animate) .toc-0-0-13 {
-    background: #050505;
-    border-color: #0A0A0A;
+    background: #0C0C0C;
+    border-color: #111111;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -784,13 +784,13 @@ body.dark .darklight-0-0-1>.dark {
     border-bottom-right-radius: 0;
   }
   body.dark .toc-0-0-13 a.current {
-    background: hsl(0, 0%, 0%);
-    border-color: #0A0A0A;
+    background: hsl(0, 0%, 3.2%);
+    border-color: #111111;
   }
 @media (prefers-color-scheme: dark) {
   body:not(.dark-mode-animate) .toc-0-0-13 a.current {
-    background: #000000;
-    border-color: #0A0A0A;
+    background: #080808;
+    border-color: #111111;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -801,11 +801,11 @@ body.dark .darklight-0-0-1>.dark {
   }
 }
   body.dark .toc-0-0-13 a:hover {
-    background: hsl(0, 0%, 0%);
+    background: hsl(0, 0%, 3.2%);
   }
 @media (prefers-color-scheme: dark) {
   body:not(.dark-mode-animate) .toc-0-0-13 a:hover {
-    background: hsl(0, 0%, 0%);
+    background: hsl(0, 0%, 3.2%);
   }
 }
   body.dark-mode-animate .toc-0-0-13.animated {
@@ -958,11 +958,11 @@ table tr:last-child > td {
   border-bottom: none;
 }
 body.dark table tr:nth-child(even) {
-  background: #0A0A0A;
+  background: #0C0C0C;
 }
 @media (prefers-color-scheme: dark) {
   body:not(.dark-mode-animate) table tr:nth-child(even) {
-    background: #0A0A0A;
+    background: #0C0C0C;
   }
 }
 body.dark-mode-animate table tr:nth-child(even) {
@@ -1036,11 +1036,11 @@ body.dark-mode-animate blockquote:after {
 @media (prefers-color-scheme: dark) {
   body:not(.dark-mode-animate) {
     color: #eeeeee;
-    background: #000000;
+    background: #080808;
   }
   body:not(.dark-mode-animate) blockquote {
     color: #cacaca;
-    background: #0A0A0A;
+    background: #0C0C0C;
   }
   body:not(.dark-mode-animate) blockquote:after {
     background: radial-gradient(circle at center, #111111 50%, transparent 52%),transparent;
@@ -1049,11 +1049,11 @@ body.dark-mode-animate blockquote:after {
 }
 body.dark {
   color: #eeeeee;
-  background: #000000;
+  background: #080808;
 }
 body.dark blockquote {
   color: #cacaca;
-  background: #0A0A0A;
+  background: #0C0C0C;
 }
 body.dark blockquote:after {
   background: radial-gradient(circle at center, #111111 50%, transparent 52%),transparent;
@@ -1080,11 +1080,11 @@ body.dark-mode-animate code {
 }
 body.dark code {
   color: #e0e0e0;
-  background: #0A0A0A;
+  background: #0C0C0C;
 }
 @media (prefers-color-scheme: dark) {
   body:not(.dark-mode-animate) code {
     color: #e0e0e0;
-    background: #0A0A0A;
+    background: #0C0C0C;
   }
 }
