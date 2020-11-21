@@ -980,11 +980,11 @@ table tr:last-child > td {
   border-bottom: none;
 }
 body.dark table tr:nth-child(even) {
-  background: #0C0C0C;
+  background: #111111;
 }
 @media (prefers-color-scheme: dark) {
   body:not(.dark-mode-animate) table tr:nth-child(even) {
-    background: #0C0C0C;
+    background: #111111;
   }
 }
 body.dark-mode-animate table tr:nth-child(even) {
@@ -1062,10 +1062,10 @@ body.dark-mode-animate blockquote:after {
   }
   body:not(.dark-mode-animate) blockquote {
     color: #cacaca;
-    background: #0C0C0C;
+    background: #111111;
   }
   body:not(.dark-mode-animate) blockquote:after {
-    background: radial-gradient(circle at center, #111111 50%, transparent 52%),transparent;
+    background: radial-gradient(circle at center, #212121 50%, transparent 52%),transparent;
     background-size: 4px 4px;
   }
 }
@@ -1075,10 +1075,10 @@ body.dark {
 }
 body.dark blockquote {
   color: #cacaca;
-  background: #0C0C0C;
+  background: #111111;
 }
 body.dark blockquote:after {
-  background: radial-gradient(circle at center, #111111 50%, transparent 52%),transparent;
+  background: radial-gradient(circle at center, #212121 50%, transparent 52%),transparent;
   background-size: 4px 4px;
 }
 img {
@@ -1102,12 +1102,12 @@ body.dark-mode-animate code {
 }
 body.dark code {
   color: #e0e0e0;
-  background: #0C0C0C;
+  background: #111111;
 }
 @media (prefers-color-scheme: dark) {
   body:not(.dark-mode-animate) code {
     color: #e0e0e0;
-    background: #0C0C0C;
+    background: #111111;
   }
 }
   .darklight-0-0-17 {
