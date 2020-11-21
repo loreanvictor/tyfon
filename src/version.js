@@ -20,3 +20,4 @@ module.exports = async () => {
 }
 
 module.exports.hint = 'Show CLI version.';
+module.exports.link = 'https://loreanvictor.github.io/tyfon/cli/version';

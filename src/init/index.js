@@ -29,3 +29,4 @@ module.exports = async() => {
 
 module.exports.check = require('./check');
 module.exports.hint = 'initialize TyFON server.';
+module.exports.link = 'https://loreanvictor.github.io/tyfon/cli/init';

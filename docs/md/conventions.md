@@ -116,4 +116,6 @@ on client-side SDK, you typically don't need to worry about these rules.
 >
 > - `whateverElse() ------> POST   /whateverElse`
 
+<br><br>
+
 > :ToCPrevNext

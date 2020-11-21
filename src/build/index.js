@@ -61,3 +61,4 @@ module.exports.examples = [
   'tyfon build',
   'tyfon build --image my-api'
 ]
+module.exports.link = 'https://loreanvictor.github.io/tyfon/cli/build';

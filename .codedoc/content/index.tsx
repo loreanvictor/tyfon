@@ -31,7 +31,7 @@ export function content(_content: HTMLElement, toc: HTMLElement, renderer: Rende
                   /> : false
             }>{toc}</ToC>
           }>
-      <style>{`#-codedoc-container p { line-height: 1.5rem; }`}</style>
+      <style>{`#-codedoc-container p, li { line-height: 1.5rem; }`}</style>
       {_content}
       <ContentNav content={_content}/>
     </Page>

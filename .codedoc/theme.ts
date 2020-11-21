@@ -18,8 +18,8 @@ export const theme = /*#__PURE__*/createTheme({
   },
   quote: {
     dark: {
-      background: '#0C0C0C',
-      border: '#111111'
+      background: '#111111',
+      border: '#212121'
     }
   },
   code: {

@@ -47,3 +47,4 @@ module.exports.examples = [
   'tyfon serve --env ENV=prod --env URL=https://google.com',
   'tyfon serve --mode prod',
 ]
+module.exports.link = 'https://loreanvictor.github.io/tyfon/cli/serve';

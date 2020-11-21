@@ -42,3 +42,4 @@ module.exports.examples = [
   'tyfon install',
   'tyfon install --env prod',
 ]
+module.exports.link = 'https://loreanvictor.github.io/tyfon/cli/install';

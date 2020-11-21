@@ -54,3 +54,4 @@ module.exports.examples = [
   'tyfon uninstall localhost:8000',
   'tyfon uninstall @api/my-tyfon',
 ]
+module.exports.link = 'https://loreanvictor.github.io/tyfon/cli/uninstall';

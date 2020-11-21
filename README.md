@@ -22,6 +22,8 @@ import { getMessage } from '@api/my-server';
 getMessage('World').then(console.log):
 ```
 
+👉 [Read the docs](https://loreanvictor.github.io/tyfon).
+
 <br><br>
 
 # Installation
@@ -34,6 +36,9 @@ npm i -g tyfon
 <br><br>
 
 # Usage
+
+[Read the docs](https://loreanvictor.github.io/tyfon) for detailed usage information and
+a getting-started tutorial.
 
 ## Server Side
 
@@ -141,212 +146,18 @@ TyFON leans heavily towards the _convention over configuration_ principle. It is
 API end-points and how code should be structured, for example it picks endpoint methods based on the name of the function, or it expects
 all API functions to be exported from `index.ts` from the root of the project.
 
-<br>
-
-## Conventions You Must Follow
-
-```
-⚖️ Remote functions and only remote functions MUST be exported from index.ts
-```
-```
-⚖️ Remote functions MUST be async or return a Promise
-```
-```
-⚖️ Argument types and return types MUST be plain JavaScript objects
-```
-```
-⚖️ Exported types MUST be local
-   i.e. argument types and return types of exported functions
-   should not depend on any dependencies.
-```
-☝️ This rule is more of a technical limitation right now, and might get removed later on.
-
-
-<br>
-
-## Conventions You Should Know
-
-```
-⚖️ Client SDK will be named @api/<server-name>,
-   where <server-name> comes from package.json on server-side code.
-```
-```
-⚖️ If two client SDKs share the same name, the one installed later overwrites the former.
-```
-☝️ So always pick a proper name for your server-side code when you do `npm init`.
-
-<br>
-
-## Function-to-Endpoint Mapping Convention
-
-```
-⚖️ Function's name is used to determine the URL of its corresponding endpoint
-   and its HTTP method:
-
-- getSomething()    ---> GET    /something
-
-- addSomething()    ---> POST   /something
-- createSomething() ---> POST   /something
-- postSomething()   ---> POST   /something
-
-- updateSomething() ---> PUT    /something
-- setSomething()    ---> PUT    /something
-- putSomething()    ---> PUT    /something
-
-- deleteSomething() ---> DELETE /something
-- removeSomething() ---> DELETE /something
-
-- whateverElse()    ---> POST   /whateverElse
-```
+👉 [Read the docs](https://loreanvictor.github.io/tyfon).
 
 <br><br>
 
-# CLI Reference
+# CLI Commands
 
-### `▶ tyfon init`
-
-> 👉 Run this on server-side!
-
-Initializes TyFON on server side, installing necessary dependencies.
-
----
-
-<br>
-
-### `▶ tyfon build`
-
-> 👉 Run this on server-side!
-
-Generates necessary network-layer code and SDK metadata. Will automatically invoke `tyfon init` if not initialized.
-
-#### options:
-
-`-i` or `--image`: The name/tag of the docker image to build _(OPTIONAL)_:
-```bash
-tyfon build --image my-docker-image
-```
-If no image name/tag is specified, will build to local filesystem.
-If image name/tag is specified, only the docker image will be built.
-This option only works if [docker](https://www.docker.com) is installed.
-
-> 💡You can use `tyfon b` as a shortcut for this command.
-
----
-
-<br>
-
-### `▶ tyfon serve`
-
-> 👉 Run this on server-side!
-
-Serves the built server code. Will reload the server when the code changes, and will automatically call `tyfon build` if never built before.
-
-‼️`tyfon serve` **WILL NOT** rebuild SDK metadata when server-side code changes. You **MUST** call `tyfon build` for updating SDK metadata.
-
-#### options:
-
-`-p` or `--port`: Determines the port to serve on. Default is `8000`.
-```bash
-tyfon serve -p 3000
-```
-`-e` or `--env`: Allows setting environment variables for the server-side code.
-```bash
-tyfon serve -e ENV=dev -e UPLOAD_DIR=./uploads
-```
-`-m` or `--mode`: Sets the running mode:
-```bash
-tyfon serve -m prod
-```
-In production mode, live-reloading of the code is turned off. It also has a faster bootup since transpiled JavaScript code is used (instead of your TypeScript files).
-
-> 💡 You can use `tyfon s` as a shortcut for this command.
-
----
-
-<br>
-
-### `▶ tyfon install <url>`
-
-> 👉 Run this on client-side!
-
-Will install SDK of the TyFON served on `<url>` as an NPM package. Assuming that the server-side code has `my-server` as its package name (in `package.json`),
-the SDK package will be named `@api/my-server`. Will override any previous package with that name. It will also store the SDK information in local `package.json` so that all necessary TyFONs can later be installed using `tyfon i`.
-
-#### options:
-
-`-e` or `--env`: Marks the environment for the installed SDK. By default, `"all"` is used.
-```bash
-tyfon i localhost:8000 --env dev
-```
-
-> 💡 You can use `tyfon i` as a shortcut for this command.
-
----
-
-<br>
-
-### `▶ tyfon install`
-
-> 👉 Run this on client-side!
-
-Will install all TyFON SDKs stored in `package.json` that match given environment.
-If no environment is given, only SDKs that are marked for `"all"` environments will be installed.
-
-#### options:
-
-`-e` or `--env`: Specifies the environment for which SDKs should be installed.
-```bash
-tyfon install             # --> installs all SDKs with "all" environment
-```
-```bash
-tyfon install --env dev   # --> installs all SDKs with "all" or "dev" environment
-```
-
-> 💡 You can use `tyfon i` as a shortcut for this command.
-
----
-
-<br>
-
-### `▶ tyfon uninstall <url|package-name>`
-
-> 👉 Run this on client-side!
-
-Will uninstall the TyFON SDK corresponding to given URL or package name.
-
-```bash
-tyfon uninstall localhost:8000
-```
-```bash
-tyfon uninstall @api/my-server
-```
-
----
-
-<br>
-
-### `▶ tyfon version`
-
-Displayes the installed version of the CLI, alongside the latest version on NPM.
-
-> 💡 You can use `tyfon v` as a shortcut for this command.
-
----
-
-<br>
-
-### `▶ tyfon help`
-
-Displays available commands and a short summary of what each would do. You can also pass it an argument
-to see more information about each command:
-
-```bash
-tyfon help
-```
-```bash
-tyfon help serve
-```
-
-> 💡 You can use `tyfon h` as a shortcut for this command.
+- [`tyfon init`](https://loreanvictor.github.io/tyfon/cli/init)
+- [`tyfon build`](https://loreanvictor.github.io/tyfon/cli/build)
+- [`tyfon serve`](https://loreanvictor.github.io/tyfon/cli/serve)
+- [`tyfon install`](https://loreanvictor.github.io/tyfon/cli/install)
+- [`tyfon uninstall`](https://loreanvictor.github.io/tyfon/cli/uninstall)
+- [`tyfon help`](https://loreanvictor.github.io/tyfon/cli/help)
+- [`tyfon version`](https://loreanvictor.github.io/tyfon/cli/version)
 
 <br><br>

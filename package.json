@@ -1,6 +1,6 @@
 {
   "name": "tyfon",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "typed functions over network",
   "main": "index.js",
   "bin": {
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/loreanvictor/tyfon/issues"
   },
-  "homepage": "https://github.com/loreanvictor/tyfon#readme",
+  "homepage": "https://loreanvictor.github.io/tyfon",
   "dependencies": {
     "chalk": "^4.1.0",
     "mkdirp": "^1.0.4",
