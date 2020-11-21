@@ -1,5 +1,7 @@
 # `tyfon version`
 
+> [alt_route](:Icon) Alias: `tyfon v`
+
 <br><br>
 
 Will print out the installed version of TyFON CLI, alongside the latest version:

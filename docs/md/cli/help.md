@@ -1,5 +1,7 @@
 # `tyfon help`
 
+> [alt_route](:Icon) Alias: `tyfon h`
+
 <br><br>
 
 Will print out usage info for TyFON CLI.
