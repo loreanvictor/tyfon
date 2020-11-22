@@ -101,7 +101,7 @@ ts-node .
 
 # Conventions
 
-TyFON operates heavily on _convention over configuration_ principles. There are conventions it
+TyFON leans heavily on _convention over configuration_ principle. There are conventions it
 uses under the hood for consistent server-client communication, and there are conventions you would
 need to follow. For example, function names will determine the endpoint URL and method (under the hood convention),
 and your remote functions must always be exported from `index.ts`.

@@ -1,9 +1,8 @@
 # Conventions
 
-TyFON based on a series of conventions. Instead of asking you to explicitly mention which URL should be used
-for each method, which methods should be exported, how should their exported types behave, etc., it will try to
-deduce all of that based on some simple and convenient-to-follow rules. This does mean that you need to follow
-some of these rules and conventions for TyFON to work properly.
+TyFON operates on a series of conventions. You need to follow some of themm for it to work properly, some other
+you should generally know about. Following these conventions keeps the code clean, and allows TyFON to operate
+with no required configuration.
 
 ---
 
