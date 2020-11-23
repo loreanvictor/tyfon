@@ -59,7 +59,7 @@ with no required configuration.
 > > export function f(a: A) { ... }
 > > ```
 
-<br>
+<!-- <br>
 
 > [gavel](:Icon) Exported types MUST be local, i.e. arguments and return types of remote
 > functions MUST not be dependent on external dependencies.
@@ -72,7 +72,7 @@ with no required configuration.
 > > export function f(/*~*/b: B/*~*/) { ... }
 > > ```
 >
-> ☝️ This rule is more of a technical limitation and might get removed later on.
+> ☝️ This rule is more of a technical limitation and might get removed later on. -->
 
 ---
 

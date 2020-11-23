@@ -64,7 +64,7 @@ export const getMessage = async name => `Hellow ${name}!`;
 tyfon serve
 ```
 
-> Check it out on http://localhost:8000/message?0=World
+> Check it out on http://localhost:8000/message?0="World"
 
 <br><br>
 

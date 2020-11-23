@@ -31,12 +31,12 @@ app.get('/__api', (req, res) => {
   res.status(200).send(__api);
 });
 
-const extract = src => {
+const extract = ({src, parsed}) => {
   const params = [];
   Object.entries(src).forEach(([key, value]) => {
     try {
       const index = parseInt(key);
-      params[index] = value;
+      params[index] = parsed ? value : JSON.parse(value);
     } catch {}
   });
 
@@ -58,10 +58,10 @@ const run = (func, params, res) => {
 }
 
 const source = req => {
-  if (req.method === 'GET') return req.query;
-  if (req.method === 'POST') return req.body;
-  if (req.method === 'PUT') return req.body;
-  if (req.method === 'DELETE') return req.query;
+  if (req.method === 'GET') return { src: req.query, parsed: false };
+  if (req.method === 'POST') return { src: req.body, parsed: true };
+  if (req.method === 'PUT') return { src: req.body, parsed: true };
+  if (req.method === 'DELETE') return { src: req.query, parsed: false };
 }
 
 const prefix = (pre, name) => pre.toLowerCase() + name[0].toUpperCase() + name.substr(1);

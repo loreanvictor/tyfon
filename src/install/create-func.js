@@ -24,7 +24,7 @@ module.exports = (origin, name) => {
     return `
 function ${name}(...args) {
   return fetch(
-    '${origin}/${url}?' + args.map((arg, index) => '' + index + '=' + encodeURIComponent(arg)).join('&'),
+    '${origin}/${url}?' + args.map((arg, index) => '' + index + '=' + encodeURIComponent(JSON.stringify(arg))).join('&'),
     { method: '${method}' }
   ).then(r => r.json());
 }

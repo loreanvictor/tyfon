@@ -53,7 +53,7 @@ Now serve it:
 tyfon serve
 ```
 
-👉 Check it out on `localhost:8000/message?0=World`.
+👉 Check it out on `localhost:8000/message?0="World"`.
 
 <br>
 
