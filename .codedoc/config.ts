@@ -23,7 +23,8 @@ export const config = /*#__PURE__*/configuration({
         url: 'https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;900&display=swap',
         fallback: 'monospace',
       }
-    }
+    },
+    favicon: '/favicon.ico',
   },
   misc: {
     github: {
