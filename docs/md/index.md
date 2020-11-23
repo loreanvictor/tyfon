@@ -102,7 +102,7 @@ getMessage(john).then(console.log);
 🚀 Run it:
 ```bash
 ts-node .
-> Hellow World!
+> Hellow John!
 ```
 
 ---
