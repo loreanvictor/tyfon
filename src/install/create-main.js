@@ -5,7 +5,7 @@ const createFunc = require('./create-func');
 
 
 module.exports = async (origin, root, funcs) => {
-  let code = `const fetch = require('cross-fetch'); \n\n`;
+  let code = `const { invoke } = require('tyfon-client'); \n\n`;
   funcs.forEach(func => code += createFunc(origin, func));
   code += `\n\nmodule.exports = { \n${funcs.map(f => '  ' + f).join(',\n')}\n}`;
 

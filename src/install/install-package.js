@@ -29,7 +29,7 @@ module.exports = async (url) => {
       types: 'index.d.ts',
       main: 'index.js',
       dependencies: {
-        'cross-fetch': '^3.0.6'
+        'tyfon-client': '^0.1.0'
       }
     };
 

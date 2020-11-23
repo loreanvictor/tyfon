@@ -11,3 +11,7 @@
 > [`tyfon help`](/cli/help)
 > [`tyfon version`](/cli/version)
 
+> :Collapse label=Advanced Usage
+>
+> [Custom Server](/advanced/custom-server)
+> [Custom Client](/advanced/custom-client)

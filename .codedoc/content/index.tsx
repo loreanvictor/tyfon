@@ -31,6 +31,13 @@ export function content(_content: HTMLElement, toc: HTMLElement, renderer: Rende
                   /> : false
             }>{toc}</ToC>
           }>
+      <style>{`
+        body {
+          background-image: url('/tyfon/docs/assets/tyfon-bg-texture.svg') !important;
+          background-attachment: fixed !important;
+          background-position: top left !important;
+          background-repeat: no-repeat !important; 
+        }`}</style>
       <style>{`#-codedoc-container p, li { line-height: 1.5rem; }`}</style>
       {_content}
       <ContentNav content={_content}/>

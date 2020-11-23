@@ -19,7 +19,7 @@ module.exports = async() => {
   say();
 
   await fs.writeFile('package.json', '{}');
-  await exec('npm', 'i express cors body-parser');
+  await exec('npm', 'i tyfon-server');
   await exec('npm', 'i --save-dev typescript rollup-plugin-dts');
   await fs.writeFile('rollup.config.js', rollupCode());
 
