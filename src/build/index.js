@@ -1,5 +1,6 @@
 const fs = require('fs').promises;
 const path = require('path');
+const shell = require('shelljs');
 
 const exec = require('../util/exec');
 const serveCode = require('../inject/serve.template');
@@ -27,7 +28,11 @@ module.exports = async (args = {}) => {
     say();
 
     await fs.writeFile(path.join('dist', '__serve.js'), serveCode());
-    await exec('tsc', `-d index.ts --outDir dist`);
+    if (shell.test('-e', 'tsconfig.json')) {
+      await exec('tsc', `-d --outDir dist`);
+    } else {
+      await exec('tsc', `-d index.ts --outDir dist`);
+    }
   
     const _types = await types();
     const _funcs = await funcs();
