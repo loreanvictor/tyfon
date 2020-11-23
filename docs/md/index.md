@@ -56,7 +56,11 @@ cd my-tyfon-server
 
 👉 Create `index.ts`:
 ```ts
-export const getMessage = async name => `Hellow ${name}!`;
+export interface User {
+  name: string;
+}
+
+export const getMessage = async (user: User) => `Hellow ${user.name}!`;
 ```
 
 🚀 Serve it:
@@ -64,7 +68,7 @@ export const getMessage = async name => `Hellow ${name}!`;
 tyfon serve
 ```
 
-> Check it out on http://localhost:8000/message?0="World"
+> Check it out on http://localhost:8000/message?0={"name":"World"}
 
 <br><br>
 
@@ -86,9 +90,13 @@ tyfon i localhost:8000
 👉 Create `index.ts`:
 
 ```ts
-import { getMessage } from '@api/my-tyfon-server';
+import { getMessage, User } from '@api/my-tyfon-server';
 
-getMessage('World').then(console.log);
+const john: User = {
+  name: 'John'
+};
+
+getMessage(john).then(console.log);
 ```
 
 🚀 Run it:

@@ -31,12 +31,17 @@ app.get('/__api', (req, res) => {
   res.status(200).send(__api);
 });
 
+const tryParse = str => {
+  try { return JSON.parse(str); }
+  catch { return str; }
+}
+
 const extract = ({src, parsed}) => {
   const params = [];
   Object.entries(src).forEach(([key, value]) => {
     try {
       const index = parseInt(key);
-      params[index] = parsed ? value : JSON.parse(value);
+      params[index] = parsed ? value : tryParse(value);
     } catch {}
   });
 
