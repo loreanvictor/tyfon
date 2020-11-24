@@ -71,8 +71,8 @@ Finally, lets configure TypeScript for our project in `tsconfig.json`:
     ]
   },
   "include": [
-    "../../*",
-    "../../**/*"
+    "./*",
+    "./**/*"
   ]
 }
 ```
