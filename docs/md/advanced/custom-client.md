@@ -2,7 +2,8 @@
 
 <br><br>
 
-You can use `tyfon-client` to easily work with TyFON servers without using auto-generated SDKs:
+You can use [`tyfon-client`](https://github.com/loreanvictor/tyfon-client) 
+to easily work with TyFON servers without using auto-generated SDKs:
 
 ```bash
 npm i tyfon-client

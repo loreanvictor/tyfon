@@ -1,5 +1,6 @@
 [Home](/)
 [Conventions](/conventions)
+[Error Handling](/error-handling)
 
 > :Collapse label=CLI Reference
 >

@@ -2,7 +2,7 @@
 
 <br><br>
 
-You can create custom TyFON servers using `tyfon-server` package. It allows
+You can create custom TyFON servers using [`tyfon-server`](https://github.com/loreanvictor/tyfon-server) package. It allows
 you to either create independent [express apps](https://expressjs.com/) for serving
 some functions or create express routers that can be mounted on already existing node applications.
 
