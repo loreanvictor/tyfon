@@ -28,7 +28,7 @@ and it is highly recommended to use it alongside [cors](https://expressjs.com/en
 and [body-parser](http://expressjs.com/en/resources/middleware/body-parser.html) middlewares:
 
 ```bash
-npm i tyfon-server express cors body-parser
+npm i tyfon-conventions tyfon-server express cors body-parser
 npm i typescript ts-node ts-node-dev @types/express @types/cors @types/body-parser --save-dev
 ```
 
@@ -129,15 +129,17 @@ import express from 'express';
 import cors from 'cors';
 import { json } from 'body-parser';
 
-/*+*/ import { router } from 'tyfon-server';
-/*+*/ import * as funcs from './funcs';
+/*+*/ import { router } from 'tyfon-server';                      // --> import the router factory
+/*+*/ import { jsonReviver } from 'tyfon-conventions';            // --> this is for custom json parsing optimized for TyFON servers
+/*+*/ import * as funcs from './funcs';                           // --> import our functions
 
 const app = express();
 app.use(cors());
-app.use(json());
+/*-*/app.use(json());
+/*+*/app.use(json({ reviver: jsonReviver }));                     // --> this is for custom json parsing optimized for TyFON servers
 app.get('/ping', (_, res) => res.status(200).send('It Works!'));
 
-/*+*/ app.use('/funcs', router(funcs));
+/*+*/ app.use('/funcs', router(funcs));                           // --> mount the router for our functions on the server
 
 app.listen(4000);
 ```
@@ -206,11 +208,12 @@ import cors from 'cors';
 import { json } from 'body-parser';
 
 import { router } from 'tyfon-server';
+import { jsonReviver } from 'tyfon-conventions';
 import * as funcs from './funcs';
 
 const app = express();
 app.use(cors());
-app.use(json());
+app.use(json({ reviver: jsonReviver }));
 app.get('/ping', (_, res) => res.status(200).send('It Works!'));
 
 /*-*/ app.use('/funcs', router(funcs));
