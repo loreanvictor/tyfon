@@ -52,6 +52,17 @@ tyfon install
 
 👉 Will skip over SDKs it cannot fetch.
 
+<br>
+
+> [move_to_inbox](:Icon (align=-6px)) **FRESH INSTALLS**
+>
+> For fresh install of a project that uses TyFON SDKs, you need to install
+> TyFON SDKs _before_ other NPM packages:
+> ```bash
+> tyfon i   # --> first install TyFON SDKs
+> npm i     # --> then install other packages
+> ```
+
 ---
 
 ## Environment Management
@@ -61,7 +72,7 @@ you might want to work with the development version of a TyFON server which runs
 for production switch to `https://my-tyfon-server.cloud`.
 
 For that purpose, you can provide the 
-`--env` parameter to `tyfon install` tag each URL with the environment it should be used in:
+`--env` parameter to `tyfon install` to tag each URL with the environment it should be used in:
 
 ```bash
 tyfon i https://my-tyfon-server.cloud --env prod
@@ -80,6 +91,22 @@ tyfon i --env prod
 
 > If `--env` parameter is not provided and no argument is given to `tyfon i`, then it will only
 > install SDKs that are NOT tagged for any particular environments.
+
+<br>
+
+> When you install an SDK first time like this:
+> ```bash
+> tyfon i localhost:8000 --env dev
+> ```
+> Further updates, i.e.:
+> ```bash
+> tyfon i localhost:8000              # --> localhost:8000 still will be for dev env
+> ```
+> will preserve the environment marked for `localhost:8000`, unless you
+> explicitly specify a new environment via `--env` parameter:
+> ```bash
+> tyfon i localhost:8000 --env test   # --> the environment will now change to test
+> ```
 
 <br><br>
 

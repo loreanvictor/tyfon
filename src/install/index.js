@@ -5,18 +5,24 @@ const { say, b, i } = require('../util/echo');
 
 module.exports = async (args = {}) => {
   const env = args.env || args.e || 'all';
+  const envspec = args.env === env || args.e === env;
 
   if (args._.length > 0) {
-    const sdks = {};
+    const pkg = JSON.parse(await fs.readFile('package.json'));
+
+    const sdks = pkg.tyfons || {};
     for (let i = 0, url = args._[i]; i < args._.length; url = args._[++i]) {
       const sdk = await install(url);
       if (sdk) {
-        sdks[sdk.url] = { ...sdk, env };
+        const origEnv = sdk.url in sdks ? sdks[sdk.url].env : undefined;
+        sdks[sdk.url] = {
+          ...sdk,
+          env: (!!origEnv && !envspec) ? origEnv : env
+        };
       }
     }
 
-    const pkg = JSON.parse(await fs.readFile('package.json'));
-    pkg.tyfons = { ...pkg.tyfons || {}, ...sdks };
+    pkg.tyfons = sdks;
     await fs.writeFile('package.json', JSON.stringify(pkg, undefined, 2));
   } else {
     const pkg = JSON.parse(await fs.readFile('package.json'));
