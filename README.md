@@ -1,7 +1,10 @@
-<p align="center">
+<div align="center">
   <img src="/tyfon-type.svg" width="320px"/>
   <p align="center"><b>Ty</b>ped <b>F</b>unctions <b>O</b>ver <b>N</b>etwork</p>
-</p>
+
+  [![version](https://img.shields.io/npm/v/tyfon?logo=npm&style=flat-square)](https://www.npmjs.com/package/tyfon)
+
+</div>
 
 <br><br>
 
@@ -48,7 +51,7 @@ Export your functions in `index.ts`:
 export async const getMessage = name => `Hellow ${name}!`;
 ```
 
-Now serve it:
+Now serve them:
 ```bash
 tyfon serve
 ```
@@ -75,7 +78,15 @@ getMessage('World').then(console.log);
 
 ## Syncing Updates
 
-On server-side code, rebuild client SDK metadata and serve it again:
+Use `tyfon watch`:
+```bash
+tyfon watch -c ../<client-path>  # --> run this on server side code
+```
+
+<br>
+
+Or do it manually:
+- On server-side code, rebuild client SDK metadata and serve it again:
 ```bash
 tyfon build                      # --> run this on server side code
 ```
@@ -83,7 +94,7 @@ tyfon build                      # --> run this on server side code
 tyfon serve                      # --> run this on server side code
 ```
 
-On client-side code, update TyFONs you are using:
+- On client-side code, update TyFONs you are using:
 ```bash
 tyfon i                          # --> run this on client side code
 ```
