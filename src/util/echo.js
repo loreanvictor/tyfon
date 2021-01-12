@@ -35,4 +35,5 @@ module.exports = {
   cheer: (...stuff) => shell.echo(chalk`{hex('${CHEERS}') #} ${stuff.join(' ')}`),
   WARN: (...stuff) => shell.echo(chalk`{hex('${WARN}') # WARNING:} ${stuff.join(' ')}`),
   warn: (...stuff) => shell.echo(chalk`{hex('${WARN}') #} ${stuff.join(' ')}`),
+  note: (...stuff) => shell.echo(chalk`{hex('${PRIMARY}') #} ${stuff.join(' ')}`),
 }

@@ -5,7 +5,7 @@ const init = require('./init');
 const build = require('./build');
 
 
-module.exports = async (args = {}) => {
+module.exports = async (args = {}, hook, nowatch) => {
   if (!await init.check(true)) await init();
   if (!await build.check(true)) await build();
 
@@ -30,7 +30,11 @@ module.exports = async (args = {}) => {
     });
   }
 
-  await exec(`ts-node-dev`, 'dist/__serve', env);
+  if (nowatch) {
+    await exec(`ts-node`, 'dist/__serve', env, hook);
+  } else {
+    await exec(`ts-node-dev`, 'dist/__serve', env, hook);
+  }
 }
 
 module.exports.hint = `serve functions exported from local ${l('index.ts')}`

@@ -132,6 +132,9 @@ and your remote functions must always be exported from `index.ts`.
 - [tyfon serve](/cli/serve)\
   Serves the functions exported from `index.ts` over network.
 
+- [tyfon watch](/cli/watch)\
+  Serves and watches the functions exported from `index.ts` over network.
+
 ## Client-Side
 
 - [tyfon install](/cli/install)\

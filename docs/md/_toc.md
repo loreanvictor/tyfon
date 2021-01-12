@@ -7,6 +7,7 @@
 > [`tyfon init`](/cli/init)
 > [`tyfon build`](/cli/build)
 > [`tyfon serve`](/cli/serve)
+> [`tyfon watch`](/cli/watch)
 > [`tyfon install`](/cli/install)
 > [`tyfon uninstall`](/cli/uninstall)
 > [`tyfon help`](/cli/help)
