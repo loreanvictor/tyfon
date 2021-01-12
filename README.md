@@ -1,6 +1,9 @@
 <p align="center">
   <img src="/tyfon-type.svg" width="320px"/>
   <p align="center"><b>Ty</b>ped <b>F</b>unctions <b>O</b>ver <b>N</b>etwork</p>
+
+  [![version](https://img.shields.io/npm/v/tyfon?logo=npm&style=flat-square)](https://www.npmjs.com/package/tyfon)
+
 </p>
 
 <br><br>
