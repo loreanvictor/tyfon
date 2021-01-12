@@ -1,6 +1,6 @@
 # Conventions
 
-TyFON operates on a series of conventions. You need to follow some of themm for it to work properly, some other
+TyFON operates on a series of conventions. You need to follow some of them for it to work properly, some others
 you should generally know about. Following these conventions keeps the code clean, and allows TyFON to operate
 with no required configuration.
 
