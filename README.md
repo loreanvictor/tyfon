@@ -78,7 +78,12 @@ getMessage('World').then(console.log);
 
 ## Syncing Updates
 
-On server-side code, rebuild client SDK metadata and serve it again:
+Using `watch`:
+```bash
+tyfon watch -c ../<client-path>  # --> run this on server side code
+```
+Or manually:
+- On server-side code, rebuild client SDK metadata and serve it again:
 ```bash
 tyfon build                      # --> run this on server side code
 ```
@@ -86,7 +91,7 @@ tyfon build                      # --> run this on server side code
 tyfon serve                      # --> run this on server side code
 ```
 
-On client-side code, update TyFONs you are using:
+- On client-side code, update TyFONs you are using:
 ```bash
 tyfon i                          # --> run this on client side code
 ```
