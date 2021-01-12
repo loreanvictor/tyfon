@@ -51,7 +51,7 @@ Export your functions in `index.ts`:
 export async const getMessage = name => `Hellow ${name}!`;
 ```
 
-Now serve it:
+Now serve them:
 ```bash
 tyfon serve
 ```
