@@ -81,14 +81,14 @@ getMessage('World').then(console.log);
 
 ## Syncing Updates
 
-Use `tyfon watch`:
+Use `tyfon watch` while working on server and client simultaneously:
 ```bash
 tyfon watch -c <client-path>     # --> run this on server side code
 ```
 
 <br>
 
-Or do it manually:
+Or sync updates manually (in other situations):
 - On server-side code, rebuild client SDK metadata and serve it again:
 ```bash
 tyfon build                      # --> run this on server side code
