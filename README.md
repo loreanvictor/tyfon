@@ -3,6 +3,7 @@
   <p align="center"><b>Ty</b>ped <b>F</b>unctions <b>O</b>ver <b>N</b>etwork</p>
 
   [![version](https://img.shields.io/npm/v/tyfon?logo=npm&style=flat-square)](https://www.npmjs.com/package/tyfon)
+  [![docs](https://img.shields.io/badge/%20-docs-blue?logo=read%20the%20docs&logoColor=white&style=flat-square)](https://loreanvictor.github.io/tyfon/)
 
 </div>
 
@@ -43,6 +44,8 @@ npm i -g tyfon
 [Read the docs](https://loreanvictor.github.io/tyfon) for detailed usage information and
 a getting-started tutorial.
 
+<br>
+
 ## Server Side
 
 Export your functions in `index.ts`:
@@ -58,7 +61,7 @@ tyfon serve
 
 👉 Check it out on `localhost:8000/message?0="World"`.
 
-<br>
+<br><br>
 
 ## Client Side
 
@@ -74,18 +77,18 @@ getMessage('World').then(console.log);
 
 👉 The name `my-server` comes from `package.json` of your server code.
 
-<br>
+<br><br>
 
 ## Syncing Updates
 
-Use `tyfon watch`:
+Use `tyfon watch` while working on server and client simultaneously:
 ```bash
-tyfon watch -c ../<client-path>  # --> run this on server side code
+tyfon watch -c <client-path>     # --> run this on server side code
 ```
 
 <br>
 
-Or do it manually:
+Or sync updates manually (in other situations):
 - On server-side code, rebuild client SDK metadata and serve it again:
 ```bash
 tyfon build                      # --> run this on server side code
@@ -99,7 +102,7 @@ tyfon serve                      # --> run this on server side code
 tyfon i                          # --> run this on client side code
 ```
 
-<br>
+<br><br>
 
 ## Server Environment Variables
 
@@ -109,7 +112,7 @@ You can pass environment variables to `typhon serve` command using `-e` option:
 typhon serve -e ENV=dev -e LOGS=verbose
 ```
 
-<br>
+<br><br>
 
 ## Client Environments
 
@@ -126,7 +129,7 @@ Now for building client-code in production, use the following command:
 tyfon i --env production        # --> this will install all generic TyFONs and all production TyFONs
 ```
 
-<br>
+<br><br>
 
 ## Deploying
 
