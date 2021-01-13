@@ -4,10 +4,10 @@ const subject = require('callbag-subject');
 const { pipe, subscribe, debounce } = require('callbag-common');
 
 const { note, l, g } = require('../util/echo');
-const wait = require('../util/wait');
 const serve = require('../serve');
 const build = require('../build');
 
+const waitForServer = require('./wait-for-server');
 const syncClient = require('./sync-client');
 
 
@@ -39,7 +39,7 @@ module.exports = async (args = {}) => {
       if (queued) { lock = false; signal(1); return; }
 
       serve(args, p => process = p, true).catch(() => {});
-      await wait(2000);
+      await waitForServer(port);
       if (queued) { lock = false; signal(1); return; }
 
       if (clientSync) await clientSync();
