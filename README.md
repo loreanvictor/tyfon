@@ -9,7 +9,7 @@
 
 <br><br>
 
-TyFON is a zero-config RPC for TypeScript. It automatically creates all required networking code on the server-side and generates client-side SDK using same type definitions for client-server consistency.
+Seamlessly use server-side TypeScript functions on the client.
 
 ```ts
 // server:
@@ -106,10 +106,10 @@ tyfon i                          # --> run this on client side code
 
 ## Server Environment Variables
 
-You can pass environment variables to `typhon serve` command using `-e` option:
+You can pass environment variables to `tyfon serve` command using `-e` option:
 
 ```bash
-typhon serve -e ENV=dev -e LOGS=verbose
+tyfon serve -e ENV=dev -e LOGS=verbose
 ```
 
 <br><br>
@@ -117,7 +117,7 @@ typhon serve -e ENV=dev -e LOGS=verbose
 ## Client Environments
 
 It is common practice for client-code to use different API URLs for different environments (i.e. development, production, staging, etc).
-You can use the `--env` flag on `typhon i` command to mark the environment a TyFON should be used in:
+You can use the `--env` flag on `tyfon i` command to mark the environment a TyFON should be used in:
 ```bash
 tyfon i https://my-server.cloud --env production
 tyfon i https://staging.my-server.cloud --env staging
