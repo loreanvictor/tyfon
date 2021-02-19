@@ -7,7 +7,7 @@
 > >
 > > ![logo](/docs/assets/tyfon-banner.svg)
 
-TyFON is a zero-config RPC for TypeScript. It automatically creates all required networking code on the server-side and generates client-side SDK using same type definitions for client-server consistency.
+Seamlessly use server-side TypeScript functions on the clients.
 
 ```ts
 // server:
