@@ -7,7 +7,9 @@
 > >
 > > ![logo](/docs/assets/tyfon-banner.svg)
 
-Seamlessly use server-side TypeScript functions on the clients.
+<div align="center">
+Seamlessly use server-side TypeScript functions (and types) on the client.
+</div>
 
 ```ts
 // server:
